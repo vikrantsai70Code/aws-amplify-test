@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import type { Schema } from "../amplify/data/resource";
 import { generateClient } from "aws-amplify/data";
-import Application from "./pages/Application"; // Import the new form page
+import { StudentsCreateForm } from './../ui-components/';
+
+
 
 const client = generateClient<Schema>();
 
@@ -44,14 +46,14 @@ function App() {
         </div>
         <div>
           {/* Add a button to navigate to the form */}
-          <Link to="/application">
+          <Link to="/StudentsCreateForm">
             <button>Go to Form</button>
           </Link>
         </div>
 
         {/* Define routes */}
         <Routes>
-          <Route path="/application" element={<Application />} />
+          <Route path="/StudentsCreateForm" element={<StudentsCreateForm />} />
         </Routes>
       </main>
     </Router>
